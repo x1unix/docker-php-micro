@@ -7,7 +7,7 @@ Tiny Docker image for PHP projects development. Based on official [PHP Docker im
 
 ## Contents
 
-This image contains PHP and Composer. This image doesn't contain Apache server  and uses plain PHP web-server as container entrypoint.
+This image contains PHP and Composer. This image doesn't contain Apache server and uses plain PHP web-server as container entrypoint.
 
 ## Included modules
 
