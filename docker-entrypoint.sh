@@ -6,7 +6,7 @@ HTTP_SERVE_DIR=${HTTP_DIR:-.}
 if [ ! -e $X_RUN_ONCE ]; then
     echo "Initializing container environment..."
     if [ -n "$COMPOSER_REQUIRE" ]; then
-        for d in $COMPOSER_REQUIRE; do echo "- Installing '$d'" && composer global require laravel/installer; done
+        for d in $COMPOSER_REQUIRE; do echo "- Installing '$d'" && composer global require $d; done
     fi
 
     touch $X_RUN_ONCE
