@@ -9,6 +9,23 @@ Tiny Docker image for PHP projects development. Based on official [PHP Docker im
 
 This image contains PHP and Composer. This image doesn't contain Apache server  and uses plain PHP web-server as container entrypoint.
 
+## Included modules
+
+In addition, to built-in PHP modules, this image also includes several most popular modules:
+
+* curl
+* zip
+* pdo_mysql
+* pdo_pgsql
+* mysqli
+* pgsql
+* mbstring
+* opcache
+* soap
+* xml
+
+To install additional module, use `docker-php-ext-install` tool. (see [Customization](#Customization) section)
+
 ## Usage
 
 ### Configuration
@@ -32,6 +49,8 @@ services:
 
 ```
 
+### Parameters
+
 **Ports:**
 
 * `8080` - PHP web server
@@ -45,7 +64,14 @@ services:
 * `COMPOSER_REQUIRE` - Multiline list of global Composer packages to install
 * `HTTP_DIR` - Directory to serve by PHP's web server (some frameworks use sub-directory, like `public`) (default: `.`)
 
-### Composer
+### Customization
+
+You can run additional shell scripts to install additional PHP module or Composer package
+by mounting directory with shell scripts to `/docker-entrypoint-init.d`.
+
+Each script will be executed at first container startup time.
+
+### Composer and global tools
 
 To call Composer command, just call Composer from Docker container:
 
@@ -60,4 +86,3 @@ docker-compose exec SERVICE_NAME composer --version
 ```
 
 Also, if you have global package installed, you can call it from Docker in the same way as above.
-
