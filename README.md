@@ -39,10 +39,10 @@ services:
   php:
     image: x1unix/php-micro 
     environment:
-      COMPOSER_REQUIRE: laravel/installer   # Install Laravel CLI globally
       HTTP_DIR: public      # Serve from 'public' directory
     volumes:
-      - ./src:/var/www/html # Mount 'src' as project directory
+      - ./src:/var/www/html                     # Mount 'src' as project directory
+      - ./preinstall:/docker-entrypoint-init.d  # Mount additional scripts to setup container
     ports:
       - 8080:8080           # Expose port 8080
 
@@ -57,10 +57,10 @@ services:
 **Volumes:**
 
 * `/var/www/html` - PHP project directory
+* `/docker-entrypoint-init.d` - Directory for additional setup shell scripts
 
 **Environment variables:**
 
-* `COMPOSER_REQUIRE` - Multiline list of global Composer packages to install
 * `HTTP_DIR` - Directory to serve by PHP's web server (some frameworks use sub-directory, like `public`) (default: `.`)
 
 ### Customization
