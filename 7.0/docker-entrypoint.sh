@@ -1,6 +1,6 @@
 #!/usr/bin/env /bin/sh
 set -e
-X_RUN_ONCE=".exists"
+X_RUN_ONCE="/.exists"
 HTTP_SERVE_DIR=${HTTP_DIR:-.}
 
 if [ ! -e $X_RUN_ONCE ]; then
