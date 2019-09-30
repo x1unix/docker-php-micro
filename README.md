@@ -2,8 +2,7 @@
 
 Tiny Docker image for PHP projects development. Based on official [PHP Docker image](https://hub.docker.com/_/php).
 
-* **[Docker Hub](https://hub.docker.com/r/x1unix/php-micro)**
-* **[GitHub](https://github.com/x1unix/docker-php-micro)**
+**[Docker Hub](https://hub.docker.com/r/x1unix/php-micro)** | **[GitHub](https://github.com/x1unix/docker-php-micro)**
 
 ## Contents
 
