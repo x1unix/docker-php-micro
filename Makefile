@@ -32,7 +32,7 @@ push-versions:
 
 .PHONY: push
 push: push-versions
-	if [ ! -z "$(ONLY)" ] && [ "$(ONLY)" != "$(LATEST)" ]; then \
+	@if [ ! -z "$(ONLY)" ] && [ "$(ONLY)" != "$(LATEST)" ]; then \
 		echo "- Tag '$(LATEST)' (latest) is excluded from build list" && \
 		exit 0; \
 	fi; \
