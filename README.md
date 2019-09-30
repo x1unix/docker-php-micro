@@ -37,7 +37,7 @@ We recommend to use **docker-compose** with this image.
 version: '2'
 services:
   php:
-    image: x1unix/php-micro 
+    image: x1unix/php-micro:7.2
     environment:
       HTTP_DIR: public      # Serve from 'public' directory
     volumes:
